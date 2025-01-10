@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  perspective: 100px;
+  transform-style: preserve-3d;
+}
+
+.red {
+  width: 300px;
+  height: 300px;
+  background-color: orangered;
+  border-radius: 50%;
+  filter: blur(4px);
+  position: absolute;
+  left: 30%;
+  top: 5%;
+  z-index: 0;
+  animation: move 6s linear infinite alternate;
+}
+.purple {
+  width: 300px;
+  height: 300px;
+  background-color: blueviolet;
+  border-radius: 50%;
+  filter: blur(4px);
+  position: absolute;
+  bottom: 5%;
+  right: 30%;
+  animation: move2 6s linear infinite alternate;
+}
+
+.container {
+  width: 400px;
+  height: 500px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 10px;
+  border: 2px solid #ffffff30;
+  background-color: rgba(74, 73, 73, 0.5);
+  
+
+}
+
+.image {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url(IMG_0400\ \(1\).jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+.name {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.occupation {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  font-family: fantasy;
+}
+.share {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.link {
+  width: 150px;
+  height: 30px;
+  border: 1px solid rgb(188, 183, 183);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: small;
+}
+.follow {
+  width: 150px;
+  height: 30px;
+  border: 1px solid rgb(188, 183, 183);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+}
+
+.modal{
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border: 2px solid #ffffff59;
+    width: 500px;
+    scale: 0;
+    background: #00000088;
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1;
+    padding: 20px 25px;
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.active{
+  scale: 1;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+hr{
+    opacity: 50%;
+}
+
+.via{
+    padding: 20px 0px;
+}
+
+
+.shareLink{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.a{
+    font-size: 25 px;
+  
+}
+.b{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #5f5f5f83;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.oa{
+  opacity: 1;
+  pointer-events: initial;
+}
+
+
+@keyframes move {
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+@keyframes move2 {
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@media (max-width: 375px) {
+  .purple {
+    width: 150px;
+    height: 150px;
+    right: 5%;
+  }
+  .red{
+    left: 5%;
+    width: 150px;
+    height: 150px;
+  }
+  .container{
+    width: 300px;
+    height: 400px;
+  }
+  .photo{
+    width: 150px;
+    height: 150px;
+    background-image: url(IMG_0400\ \(1\).jpeg);
+    background-size: cover;
+    background-position: center;
+  }
+.link{
+    width: 120px;
+    font-size: 10px;
+}
+.follow{
+    width: 120px;
+    font-size: 10px;
+}
+
+.modal{
+  width: 350px;
+}
+
+}
+
+.link:hover{
+    background-color: rgb(101, 100, 100);
+}
+.follow:hover{
+    background-color: rgb(101, 100, 100);
+}
+
